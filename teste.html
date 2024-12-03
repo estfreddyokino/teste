@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data e Hora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data e Hora Atual</h1>
+        <p id="datetime"></p>
+    </div>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('datetime').textContent = now.toLocaleDateString('pt-BR', options);
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+</body>
+</html>
